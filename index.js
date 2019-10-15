@@ -3,9 +3,10 @@
 const assert = require('assert');
 const crypto = require('crypto');
 const querystring = require('querystring');
-const https = require('https');
+// const https = require('https');
 const Debug = require('debug');
-const nodeFetch = require('node-fetch');
+// const nodeFetch = require('node-fetch');
+const fetch = require('node-fetch');
 const OAuth = require('oauth-1.0a');
 
 const debug = Debug('telldus-api');
@@ -29,13 +30,13 @@ const commands = {
 
 const supportedMethods = Object.values(commands).reduce((memo, num) => memo + num, 0);
 
-// https://github.com/johnlemonse/homebridge-telldus/issues/76
-async function fetch(url, opts) {
-  return nodeFetch(url, {
-    ...opts,
-    agent: new https.Agent({ minVersion: 'TLSv1' }),
-  });
-}
+// // https://github.com/johnlemonse/homebridge-telldus/issues/76
+// async function fetch(url, opts) {
+//   return nodeFetch(url, {
+//     ...opts,
+//     agent: new https.Agent({ minVersion: 'TLSv1' }),
+//   });
+// }
 
 
 class Api {
