@@ -154,7 +154,7 @@ class LocalApi extends Api {
   }
 
   getBaseUrl() {
-    return `http://${this.host}/api`;
+    return `https://${this.host}/api`;
   }
 
   async refreshAccessToken() {
